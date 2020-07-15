@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Page init event
+    document.addEventListener('init', function(event) {
+      var page = event.target;
+
+      if (page.matches('#first-page')) {
+
+        //男子寮のボタンを押した時のイベントを定義している
+        page.querySelector('#push-button-a').onclick = function() {
+          document.querySelector('#navigator').pushPage('page2.html');
+        };
+
+        //女子寮のボタンを押した時のイベントを定義している
+        page.querySelector('#push-button-b').onclick = function() {
+          document.querySelector('#navigator').pushPage('page3.html');
+        };
+
+        //食堂のボタンを押した時のイベントを定義している
+        page.querySelector('#push-button-c').onclick = function() {
+          document.querySelector('#navigator').pushPage('page4.html');
+        };
+
+        //寮事務のボタンを押した時のイベントを定義している
+        page.querySelector('#push-button-d').onclick = function() {
+          document.querySelector('#navigator').pushPage('page5.html');
+        };
+
+        //若潮会館のボタンを押した時のイベントを定義している
+        page.querySelector('#push-button-e').onclick = function() {
+          document.querySelector('#navigator').pushPage('page6.html');
+        };
+      }   
+    }
+ );
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+  </script>
+</head>
+<body>
+
+  //one-navigatorはページを変えるためのパーツ
+  <ons-navigator id="navigator"  page="page1.html"></ons-navigator> 
+
+  //page1.htmlの定義
+  <ons-template id="page1.html">
+    <ons-page id="first-page">
+      <ons-toolbar>
+        <div class="center">寮のこと</div>
+      </ons-toolbar>
+      <div class="content" style="text-align: center">
+        <p>施設一覧</p>
+        <ons-list-item modifier="longdivider" id="push-button-a">男子寮</ons-list-item>
+        <ons-list-item modifier="longdivider" id="push-button-b">女子寮</ons-list-item>
+        <ons-list-item modifier="longdivider" id="push-button-c">食堂</ons-list-item>
+        <ons-list-item modifier="longdivider" id="push-button-d">寮事務</ons-list-item>
+        <ons-list-item modifier="longdivider" id="push-button-e">若潮会館</ons-list-item>
+      </div>
+    </ons-page>
+  </ons-template>
+
+  //page2.htmlの定義
+  <ons-template id="page2.html">
+    <ons-page id="second-page">'
+      <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">男子寮</div>
+      </ons-toolbar>
+        <p>男子棟は１棟・３棟・４棟・５棟と合計４つ建っています。</p>
+        <p>１人部屋もあるので１人がいい人にはくじで当たったら最高ですね。</p>
+    </ons-page>
+  </ons-template>
+
+//page3.htmlの定義
+  <ons-template id="page3.html">
+    <ons-page id="second-page2">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">女子寮</div>
+      </ons-toolbar>
+        <p>女子寮</p>
+    </ons-page>
+  </ons-template>
+
+   //page4.htmlの定義
+  <ons-template id="page4.html">
+    <ons-page id="second-page3">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">食堂</div>
+      </ons-toolbar>
+        <p>食堂</p>
+    </ons-page>
+  </ons-template>
+
+   //page5.htmlの定義
+  <ons-template id="page5.html">
+    <ons-page id="second-page4">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">寮事務</div>
+      </ons-toolbar>
+        <p>寮事務</p>
+    </ons-page>
+  </ons-template>
+
+  //page6.htmlの定義
+  <ons-template id="page6.html">
+    <ons-page id="second-page5">
+      <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">若潮会館</div>
+      </ons-toolbar>
+        <p>若潮会館</p>
+     </ons-page>
+  </ons-template>
+
+
+</body>
+</html>
+
